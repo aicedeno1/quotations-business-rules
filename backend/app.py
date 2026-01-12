@@ -14,8 +14,8 @@ import traceback
 # Configuración de la aplicación Flask
 app = Flask(__name__)
 
-# Habilitar CORS para permitir peticiones desde React
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "https://quotations-frontend.onrender.com"]}})
+# Habilitar CORS para permitir peticiones desde cualquier origen (para producción con Render)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Configuración de MongoDB
 MONGODB_URI = "mongodb+srv://mrsproudd:mrsproudd@cluster0.ad7fs0q.mongodb.net/recipemanagementsystem?appName=Cluster0"
